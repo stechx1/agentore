@@ -11,6 +11,9 @@ module.exports = {
         sans: ['Inter', 'sans-serif'],
         inter: ['Inter', 'sans-serif'],
       },
+      colors: {
+        primary: "#37F1E6"
+      }
     },
   },
   plugins: [],
