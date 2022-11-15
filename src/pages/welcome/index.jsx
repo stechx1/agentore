@@ -25,7 +25,9 @@ const WelcomePage = () => {
           </p>
         </div>
         <div className='flex space-x-2 mt-6'>
-          <Button paddingX="36">Agent Registration Form</Button>
+          <Button onClick={() => router.push('/inquiries')} paddingX='36'>
+            Agent Registration Form
+          </Button>
         </div>
       </div>
     </div>

@@ -1,9 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { Button } from '../../components/Button/Button';
 
 const SignUpPage = () => {
+  const [email, setEmail] = useState('');
+  const [accessCode, setAccessCode] = useState('');
+  const [companyName, setCompanyName] = useState('');
   const router = useRouter();
   return (
     <div className='h-screen bg-[#212121] flex justify-center items-center'>
@@ -23,6 +27,8 @@ const SignUpPage = () => {
             name='email'
             type='email'
             autoComplete='email'
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             required
             className='appearance-none rounded-full relative block
                   w-full px-3 py-2 border border-gray-300
@@ -35,7 +41,9 @@ const SignUpPage = () => {
           <input
             id='code'
             name='code'
-            type='text'
+            type='password'
+            value={accessCode}
+            onChange={(e) => setAccessCode(e.target.value)}
             required
             className='appearance-none rounded-full relative block
                   w-full px-3 py-2 border border-gray-300
@@ -48,7 +56,7 @@ const SignUpPage = () => {
           <input
             id='code'
             name='code'
-            type='text'
+            type='password'
             required
             className='appearance-none rounded-full relative block
                   w-full px-3 py-2 border border-gray-300
@@ -59,9 +67,11 @@ const SignUpPage = () => {
           />
 
           <input
-            id='code'
-            name='code'
+            id='companyName'
+            name='companyName'
             type='text'
+            value={companyName}
+            onChange={(e) => setCompanyName(e.target.value)}
             required
             className='appearance-none rounded-full relative block
                   w-full px-3 py-2 border border-gray-300
@@ -70,14 +80,6 @@ const SignUpPage = () => {
                   focus:border-primary focus:z-10 sm:text-sm'
             placeholder='Company Name'
           />
-          <div
-            className='cursor-pointer'
-            onClick={() => router.push('/forgot-code')}
-          >
-            <p className='text-sm mt-3 ml-2 font-light underline'>
-              Forgot Access Code?
-            </p>
-          </div>
 
           <div className='flex space-x-2 mt-4'>
             <Button onClick={() => router.push('/login')} type={'secondary'}>

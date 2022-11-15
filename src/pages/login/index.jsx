@@ -1,9 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 import Head from 'next/head';
 import { useRouter } from 'next/router';
+import { useState } from 'react';
 import { Button } from '../../components/Button/Button';
 
 const LoginPage = () => {
+  const [email, setEmail] = useState('');
+  const [accessCode, setAccessCode] = useState('');
   const router = useRouter();
   return (
     <div className='h-screen bg-[#212121] flex justify-center items-center'>
@@ -19,6 +22,8 @@ const LoginPage = () => {
         <h2 className='text-3xl mb-8'>Login</h2>
         <form>
           <input
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
             id='email-address'
             name='email'
             type='email'
@@ -35,7 +40,9 @@ const LoginPage = () => {
           <input
             id='code'
             name='code'
-            type='text'
+            value={accessCode}
+            onChange={(e) => setAccessCode(e.target.value)}
+            type='password'
             required
             className='appearance-none rounded-full relative block
                   w-full px-3 py-2 border border-gray-300
@@ -54,7 +61,9 @@ const LoginPage = () => {
           </div>
 
           <div className='flex space-x-2 mt-4'>
-            <Button type={'secondary'}>Register an agent</Button>
+            <Button onClick={() => router.push('/signup')} type={'secondary'}>
+              Register an agent
+            </Button>
             <Button onClick={() => router.push('/welcome')}>Access</Button>
           </div>
         </form>
