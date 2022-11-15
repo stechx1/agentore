@@ -1,5 +1,5 @@
+/* eslint-disable @next/next/no-img-element */
 import Head from 'next/head';
-import Link from 'next/link';
 import { Button } from '../../components/Button/Button';
 
 const LoginPage = () => {
@@ -8,7 +8,12 @@ const LoginPage = () => {
       <Head>
         <title>Login - Agentore</title>
       </Head>
-      <div className='bg-[#111111] text-white rounded-xl px-32 py-20'>
+      <div className='bg-[#111111] text-white rounded-xl px-32 py-20 relative'>
+        <img
+          src='/icons/man-icon.png'
+          alt='man-icon'
+          className='absolute top-[-30px] left-7 '
+        />
         <h2 className='text-3xl mb-8'>Login</h2>
         <form>
           <input
@@ -45,7 +50,7 @@ const LoginPage = () => {
           </div>
 
           <div className='flex space-x-2 mt-4'>
-            <Button type={"secondary"}>Register an agent</Button>
+            <Button type={'secondary'}>Register an agent</Button>
             <Button>Access</Button>
           </div>
         </form>
