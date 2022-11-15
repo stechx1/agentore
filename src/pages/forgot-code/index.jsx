@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Button } from '../../components/Button/Button';
 
-const LoginPage = () => {
+const ForgotCodePage = () => {
   const router = useRouter();
   return (
     <div className='h-screen bg-[#212121] flex justify-center items-center'>
@@ -16,7 +16,7 @@ const LoginPage = () => {
           alt='man-icon'
           className='absolute top-[-30px] left-7 '
         />
-        <h2 className='text-3xl mb-8'>Login</h2>
+        <h2 className='text-3xl mb-8'>Forgot Access Code</h2>
         <form>
           <input
             id='email-address'
@@ -32,30 +32,11 @@ const LoginPage = () => {
             placeholder='Access Email'
           />
 
-          <input
-            id='code'
-            name='code'
-            type='text'
-            required
-            className='appearance-none rounded-full relative block
-                  w-full px-3 py-2 border border-gray-300
-                  placeholder-gray-500 text-gray-900
-                  focus:outline-none focus:ring-primary
-                  focus:border-primary focus:z-10 sm:text-sm'
-            placeholder='Access Code'
-          />
-          <div
-            className='cursor-pointer'
-            onClick={() => router.push('/forgot-code')}
-          >
-            <p className='text-sm mt-3 ml-2 font-light underline'>
-              Forgot Access Code?
-            </p>
-          </div>
-
           <div className='flex space-x-2 mt-4'>
-            <Button type={'secondary'}>Register an agent</Button>
-            <Button>Access</Button>
+            <Button onClick={() => router.push('/login')} type={'secondary'}>
+              Back
+            </Button>
+            <Button>Submit</Button>
           </div>
         </form>
       </div>
@@ -63,4 +44,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default ForgotCodePage;
