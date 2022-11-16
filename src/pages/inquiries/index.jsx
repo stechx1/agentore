@@ -1,5 +1,11 @@
 import { InquiryBox } from '../../collections';
-import { ActionButton, Button, DatePicker } from '../../components';
+import {
+  ActionButton,
+  AddButton,
+  Button,
+  DatePicker,
+  Tag,
+} from '../../components';
 import Sidebar from '../../components/Sidebar/Sidebar';
 
 const InquiriesPage = () => {
@@ -61,6 +67,15 @@ const InquiriesPage = () => {
             <div className='flex flex-col space-y-4'>
               <h2 className='text-2xl font-bold'>Filter</h2>
               <DatePicker />
+              <div className='grid grid-cols-2 gap-3'>
+                <Tag name='Website Bug (2)' color='#9EFFF9' />
+                <Tag name='Pre-Sales (201)' color='#FFAA9E' />
+                <Tag name='Packaging (15)' color='#A7FD99' />
+                <Tag offlabel name='Off Label Filter (67)' color='#A7FD99' />
+              </div>
+              <div className='flex items-center'>
+                <AddButton revert />
+              </div>
             </div>
           </div>
         </div>
