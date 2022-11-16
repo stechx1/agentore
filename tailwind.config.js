@@ -1,9 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx}",
-    "./src/components/**/*.{js,ts,jsx,tsx}",
-    "./src/collections/**/*.{js,ts,jsx,tsx}",
+    './src/pages/**/*.{js,ts,jsx,tsx}',
+    './src/components/**/*.{js,ts,jsx,tsx}',
+    './src/collections/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -12,9 +12,9 @@ module.exports = {
         inter: ['Inter', 'sans-serif'],
       },
       colors: {
-        primary: "#37F1E6"
-      }
+        primary: '#37F1E6',
+      },
     },
   },
-  plugins: [],
-}
+  plugins: [require('flowbite/plugin')],
+};

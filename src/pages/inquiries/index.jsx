@@ -1,4 +1,5 @@
 import { InquiryBox } from '../../collections';
+import { ActionButton, Button } from '../../components';
 import Sidebar from '../../components/Sidebar/Sidebar';
 
 const InquiriesPage = () => {
@@ -35,7 +36,7 @@ const InquiriesPage = () => {
   return (
     <div className='bg-[#212121] text-white font-inter'>
       <Sidebar>
-        <div className='px-14 py-8 flex justify-between font-inter'>
+        <div className='px-14 py-8 flex justify-between font-inter space-x-8'>
           <div className='flex flex-col space-y-4'>
             {/* inquiry box*/}
             <InquiryBox
@@ -46,9 +47,21 @@ const InquiriesPage = () => {
               para='thanks Mo! and those reusable cooler bags can be returned to be used for future meal drop offs? '
               tags={tagsInquiry2}
             />
-            <div></div>
           </div>
-          <div>there</div>
+          <div className='flex flex-col space-y-8'>
+            <div className='flex flex-col space-y-4'>
+              <ActionButton iconSrc={'/icons/arrow-icon.png'} color='#37F1E6'>
+                Train Your Agent
+              </ActionButton>
+              <ActionButton iconSrc={'/icons/warning.svg'} color='#F1A737'>
+                There are (21) inqueries to review
+              </ActionButton>
+            </div>
+
+            <div className='flex flex-col space-y-4'>
+              <h2 className='text-2xl font-bold'>Filter</h2>
+            </div>
+          </div>
         </div>
       </Sidebar>
     </div>
