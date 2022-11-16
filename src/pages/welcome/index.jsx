@@ -4,6 +4,7 @@ import { useRouter } from 'next/router';
 import { Button } from '../../components/Button/Button';
 
 const WelcomePage = () => {
+  const router = useRouter();
   return (
     <div className='h-screen bg-[#212121] flex justify-center items-center'>
       <Head>
