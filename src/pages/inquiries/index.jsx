@@ -1,5 +1,5 @@
 import { InquiryBox } from '../../collections';
-import { ActionButton, Button } from '../../components';
+import { ActionButton, Button, DatePicker } from '../../components';
 import Sidebar from '../../components/Sidebar/Sidebar';
 
 const InquiriesPage = () => {
@@ -60,6 +60,7 @@ const InquiriesPage = () => {
 
             <div className='flex flex-col space-y-4'>
               <h2 className='text-2xl font-bold'>Filter</h2>
+              <DatePicker />
             </div>
           </div>
         </div>

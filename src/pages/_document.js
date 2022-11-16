@@ -16,7 +16,6 @@ export default function Document() {
         <Main />
         <NextScript />
       </body>
-      <Script src='../path/to/flowbite/dist/datepicker.js'></Script>
     </Html>
   );
 }
