@@ -1,10 +1,14 @@
-import { transparent } from 'tailwindcss/colors';
+import { transparent } from "tailwindcss/colors";
 
-export const Tag = ({ color, name, offlabel }) => {
+export const Tag = ({ color, bgColor, name, offlabel }) => {
   if (offlabel) {
     return (
       <div
-        style={{ color: color, border: `1px solid ${color}` }}
+        style={{
+          color: color,
+          border: `1px solid ${color}`,
+          backgroundColor: bgColor,
+        }}
         className={`px-4 py-1 rounded-xl bg-transparent`}
       >
         <p>{name}</p>
