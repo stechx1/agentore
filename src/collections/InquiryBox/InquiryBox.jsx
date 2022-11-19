@@ -62,7 +62,7 @@ export const InquiryBox = ({ para, tags, setTags, dropdown, setDropdown }) => {
             >
               {dropdown?.map((tag) => {
                 return (
-                  <li
+                  <li key={Math.random()}
                     className="m-1 cursor-pointer"
                     onClick={() => addItemToTags(tag)}
                   >

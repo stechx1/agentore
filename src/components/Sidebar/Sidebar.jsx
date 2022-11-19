@@ -1,33 +1,21 @@
-import { FaBars, FaHome, FaLock, FaMoneyBill, FaUser } from "react-icons/fa";
-import {
-  MdMessage,
-  MdHomeRepairService,
-  MdNotifications,
-} from "react-icons/md";
-import { BiAnalyse, BiSearch } from "react-icons/bi";
-import {
-  AiFillHeart,
-  AiTwotoneFileExclamation,
-  AiOutlineHistory,
-} from "react-icons/ai";
-import { BsCartCheck } from "react-icons/bs";
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import SidebarMenu from "./SidebarMenu";
-import Link from "next/link";
+import { FaBars, FaHome, FaUser } from 'react-icons/fa';
+import { useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
+import SidebarMenu from './SidebarMenu';
+import Link from 'next/link';
 
 // import "./style.css";
 
 const userRoutes = [
   {
-    path: "/inquiries#",
-    name: "Inquiries",
+    path: '/inquiries#',
+    name: 'Inquiries',
     icon: <FaHome />,
     modal: true,
   },
   {
-    path: "/settings/profile",
-    name: "Setting",
+    path: '/settings',
+    name: 'Setting',
     icon: <FaUser />,
     modal: true,
   },
@@ -48,8 +36,8 @@ const SideBar = ({ children }) => {
       },
     },
     show: {
-      width: "140px",
-      padding: "5px 15px",
+      width: '140px',
+      padding: '5px 15px',
       transition: {
         duration: 0.2,
       },
@@ -66,7 +54,7 @@ const SideBar = ({ children }) => {
     },
     show: {
       opacity: 1,
-      width: "auto",
+      width: 'auto',
       transition: {
         duration: 0.5,
       },
@@ -75,35 +63,35 @@ const SideBar = ({ children }) => {
 
   return (
     <>
-      <div className="main-container">
+      <div className='main-container'>
         <motion.div
           animate={{
-            width: isOpen ? "200px" : "45px",
+            width: isOpen ? '200px' : '45px',
 
             transition: {
               duration: 0.3,
-              type: "spring",
+              type: 'spring',
               damping: 10,
             },
           }}
           className={`sidebar `}
         >
-          <div className="top_section">
+          <div className='top_section'>
             <AnimatePresence>
               {isOpen && (
                 <motion.h1
                   variants={showAnimation}
-                  initial="hidden"
-                  animate="show"
-                  exit="hidden"
-                  className="logo"
+                  initial='hidden'
+                  animate='show'
+                  exit='hidden'
+                  className='logo'
                 ></motion.h1>
               )}
             </AnimatePresence>
 
             <div
-              className="bars"
-              style={{ fontSize: "22px", cursor: "pointer" }}
+              className='bars'
+              style={{ fontSize: '22px', cursor: 'pointer' }}
             >
               <FaBars onClick={toggle} />
             </div>
@@ -125,11 +113,12 @@ const SideBar = ({ children }) => {
               )}
             </AnimatePresence>
           </div> */}
-          <section className="routes">
+          <section className='routes'>
             {userRoutes.map((route, index) => {
               if (route.subRoutes) {
                 return (
                   <SidebarMenu
+                    key={index}
                     setIsOpen={setIsOpen}
                     route={route}
                     showAnimation={showAnimation}
@@ -139,22 +128,22 @@ const SideBar = ({ children }) => {
               }
 
               return (
-                <div className="ml-2">
+                <div key={index} className='ml-2'>
                   <Link
                     href={route.path}
-                    className="flex gap-x-8"
-                    style={{ padding: "10px 5px", cursor: "pointer" }}
+                    className='flex gap-x-8'
+                    style={{ padding: '10px 5px', cursor: 'pointer' }}
                   >
-                    <div style={{ fontSize: "22px" }}>{route.icon}</div>
+                    <div style={{ fontSize: '22px' }}>{route.icon}</div>
                     <AnimatePresence>
                       {isOpen && (
                         <>
                           <motion.div
                             variants={showAnimation}
-                            initial="hidden"
-                            animate="show"
-                            exit="hidden"
-                            className="link_text"
+                            initial='hidden'
+                            animate='show'
+                            exit='hidden'
+                            className='link_text'
                           >
                             {route.name}
                           </motion.div>
@@ -168,7 +157,7 @@ const SideBar = ({ children }) => {
           </section>
         </motion.div>
 
-        <main style={{ margin: "7px", width: "100%" }}>{children}</main>
+        <main style={{ margin: '7px', width: '100%' }}>{children}</main>
       </div>
     </>
   );
