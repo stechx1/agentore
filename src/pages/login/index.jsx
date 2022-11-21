@@ -60,7 +60,7 @@ const LoginPage = () => {
             </p>
           </div>
 
-          <div className='flex space-x-2 mt-4'>
+          <div className='flex flex-col space-y-4 md:flex-row md:space-y-0 space-x-2 mt-4 items-center'>
             <Button onClick={() => router.push('/signup')} type={'secondary'}>
               Register an agent
             </Button>

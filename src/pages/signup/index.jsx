@@ -14,7 +14,7 @@ const SignUpPage = () => {
       <Head>
         <title>Sign Up - Agentore</title>
       </Head>
-      <div className='bg-[#111111] text-white rounded-xl px-32 py-20 relative'>
+      <div className='bg-[#111111] text-white rounded-xl px-32 md:px-32 py-20 relative max-w-[740px]'>
         <img
           src='/icons/man-icon.png'
           alt='man-icon'
@@ -30,7 +30,7 @@ const SignUpPage = () => {
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
-            className='appearance-none rounded-full relative block
+            className='sm:max-w-[330px] appearance-none rounded-full relative block
                   w-full px-3 py-2 border border-gray-300
                   placeholder-gray-500 text-gray-900 
                   focus:outline-none focus:ring-primary
@@ -45,7 +45,7 @@ const SignUpPage = () => {
             value={accessCode}
             onChange={(e) => setAccessCode(e.target.value)}
             required
-            className='appearance-none rounded-full relative block
+            className='sm:max-w-[330px] appearance-none rounded-full relative block
                   w-full px-3 py-2 border border-gray-300
                   placeholder-gray-500 text-gray-900
                   focus:outline-none focus:ring-primary
@@ -58,7 +58,7 @@ const SignUpPage = () => {
             name='code'
             type='password'
             required
-            className='appearance-none rounded-full relative block
+            className='sm:max-w-[330px] appearance-none rounded-full relative block
                   w-full px-3 py-2 border border-gray-300
                   placeholder-gray-500 text-gray-900
                   focus:outline-none focus:ring-primary
@@ -73,7 +73,7 @@ const SignUpPage = () => {
             value={companyName}
             onChange={(e) => setCompanyName(e.target.value)}
             required
-            className='appearance-none rounded-full relative block
+            className='sm:max-w-[330px] appearance-none rounded-full relative block
                   w-full px-3 py-2 border border-gray-300
                   placeholder-gray-500 text-gray-900
                   focus:outline-none focus:ring-primary
@@ -81,7 +81,7 @@ const SignUpPage = () => {
             placeholder='Company Name'
           />
 
-          <div className='flex space-x-2 mt-4'>
+          <div className='flex flex-col space-y-4 md:flex-row md:space-y-0 space-x-2 mt-4 items-center'>
             <Button onClick={() => router.push('/login')} type={'secondary'}>
               Already a member?
             </Button>
